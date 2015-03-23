@@ -1,4 +1,3 @@
-UserInterfaceState.xcuserstate
 project.xcworkspace
 xcuserdata
 *.xccheckout
@@ -6,3 +5,4 @@ config.plist
 *.swp
 .DS_Store
 Build
+SCChart.xcodeproj/project.xcworkspace/xcuserdata/MLS.xcuserdatad/UserInterfaceState.xcuserstate
