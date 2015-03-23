@@ -1,0 +1,7 @@
+project.xcworkspace
+xcuserdata
+*.xccheckout
+config.plist
+*.swp
+.DS_Store
+Build
