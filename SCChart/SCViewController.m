@@ -9,6 +9,8 @@
 #import "SCViewController.h"
 #import "SCChartCell.h"
 #import "SCBarCell.h"
+#import "SCCircleCell.h"
+#import "SCPieCell.h"
 
 @interface SCViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -17,6 +19,8 @@
 @implementation SCViewController
 static NSString *reuseIdentifierChart = @"SCChartCell";
 static NSString *reuseIdentifierBar = @"SCBarCell";
+static NSString *reuseIdentifierCircle = @"SCCircleCell";
+static NSString *reuseIdentifierPie = @"SCPieCell";
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
@@ -29,17 +33,35 @@ static NSString *reuseIdentifierBar = @"SCBarCell";
     tableView.dataSource = self;
     [tableView registerClass:[SCChartCell class] forCellReuseIdentifier:reuseIdentifierChart];
     [tableView registerClass:[SCBarCell class] forCellReuseIdentifier:reuseIdentifierBar];
+    [tableView registerClass:[SCCircleCell class] forCellReuseIdentifier:reuseIdentifierCircle];
+    [tableView registerClass:[SCPieCell class] forCellReuseIdentifier:reuseIdentifierPie];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];
     
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return section ? 4:4;
+    switch (section) {
+        case 0:
+            return 3;
+            break;
+        case 1:
+            return 2;
+            break;
+        case 2:
+            return 1;
+            break;
+        case 3:
+            return 1;
+            break;
+        default:
+            return 0;
+            break;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -67,6 +89,31 @@ static NSString *reuseIdentifierBar = @"SCBarCell";
             return cell;
         }
             break;
+            
+        case 2:
+        {
+            SCChartCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierCircle forIndexPath:indexPath];
+            if (!cell) {
+                cell = [[SCChartCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifierCircle];
+            }
+            [cell configUI:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        }
+            break;
+
+        case 3:
+        {
+            SCPieCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierPie forIndexPath:indexPath];
+            if (!cell) {
+                cell = [[SCPieCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifierPie];
+            }
+            [cell configUI:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        }
+            break;
+
         default:
             break;
     }
@@ -82,7 +129,22 @@ static NSString *reuseIdentifierBar = @"SCBarCell";
     UILabel *label = [[UILabel alloc]initWithFrame:frame];
     label.font = [UIFont systemFontOfSize:14];
     label.backgroundColor = [[UIColor lightGrayColor]colorWithAlphaComponent:0.3];
-    label.text = section ? @"柱状图" : @"折现图";
+    switch (section) {
+        case 0:
+            label.text = @"折线图";
+            break;
+        case 1:
+            label.text = @"柱状图";
+            break;
+        case 2:
+            label.text = @"圆形图";
+            break;
+        case 3:
+            label.text = @"圆饼图";
+            break;
+        default:
+            break;
+    }
     label.textColor = [UIColor colorWithRed:0.257 green:0.650 blue:0.478 alpha:1.000];
     label.textAlignment = NSTextAlignmentCenter;
     return label;

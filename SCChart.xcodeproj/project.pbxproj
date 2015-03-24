@@ -22,6 +22,13 @@
 		250383F91AB2CAA50034BB22 /* SCTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 250383F21AB2CAA50034BB22 /* SCTool.m */; };
 		250383FE1AB2CCFB0034BB22 /* SCBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 250383FB1AB2CCFB0034BB22 /* SCBarCell.m */; };
 		250383FF1AB2CCFB0034BB22 /* SCChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 250383FD1AB2CCFB0034BB22 /* SCChartCell.m */; };
+		25FA1F3C1AC15F4300F4C43F /* SCCircleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FA1F3B1AC15F4300F4C43F /* SCCircleChart.m */; };
+		25FA1F3F1AC15F4B00F4C43F /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FA1F3E1AC15F4B00F4C43F /* UICountingLabel.m */; };
+		25FA1F421AC161BF00F4C43F /* SCCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FA1F411AC161BF00F4C43F /* SCCircleCell.m */; };
+		25FA1F511AC1708800F4C43F /* PNPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FA1F4E1AC1708800F4C43F /* PNPieChart.m */; };
+		25FA1F521AC1708800F4C43F /* PNPieChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FA1F501AC1708800F4C43F /* PNPieChartDataItem.m */; };
+		25FA1F551AC170B200F4C43F /* SCPieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FA1F541AC170B200F4C43F /* SCPieCell.m */; };
+		25FA1F581AC1718200F4C43F /* PNGenericChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FA1F571AC1718200F4C43F /* PNGenericChart.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +72,21 @@
 		250383FB1AB2CCFB0034BB22 /* SCBarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCBarCell.m; sourceTree = "<group>"; };
 		250383FC1AB2CCFB0034BB22 /* SCChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCChartCell.h; sourceTree = "<group>"; };
 		250383FD1AB2CCFB0034BB22 /* SCChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCChartCell.m; sourceTree = "<group>"; };
+		25FA1F3A1AC15F4300F4C43F /* SCCircleChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCircleChart.h; sourceTree = "<group>"; };
+		25FA1F3B1AC15F4300F4C43F /* SCCircleChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCircleChart.m; sourceTree = "<group>"; };
+		25FA1F3D1AC15F4B00F4C43F /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
+		25FA1F3E1AC15F4B00F4C43F /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
+		25FA1F401AC161BF00F4C43F /* SCCircleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCircleCell.h; sourceTree = "<group>"; };
+		25FA1F411AC161BF00F4C43F /* SCCircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCircleCell.m; sourceTree = "<group>"; };
+		25FA1F4D1AC1708800F4C43F /* PNPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNPieChart.h; sourceTree = "<group>"; };
+		25FA1F4E1AC1708800F4C43F /* PNPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNPieChart.m; sourceTree = "<group>"; };
+		25FA1F4F1AC1708800F4C43F /* PNPieChartDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNPieChartDataItem.h; sourceTree = "<group>"; };
+		25FA1F501AC1708800F4C43F /* PNPieChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNPieChartDataItem.m; sourceTree = "<group>"; };
+		25FA1F531AC170B200F4C43F /* SCPieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPieCell.h; sourceTree = "<group>"; };
+		25FA1F541AC170B200F4C43F /* SCPieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPieCell.m; sourceTree = "<group>"; };
+		25FA1F561AC1718200F4C43F /* PNGenericChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGenericChart.h; sourceTree = "<group>"; };
+		25FA1F571AC1718200F4C43F /* PNGenericChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGenericChart.m; sourceTree = "<group>"; };
+		25FA1F591AC1718E00F4C43F /* PNChartDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNChartDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +133,14 @@
 				250383AA1AB2C9D80034BB22 /* AppDelegate.m */,
 				250383CB1AB2CA300034BB22 /* SCViewController.h */,
 				250383CC1AB2CA300034BB22 /* SCViewController.m */,
-				250383FA1AB2CCFB0034BB22 /* SCBarCell.h */,
-				250383FB1AB2CCFB0034BB22 /* SCBarCell.m */,
 				250383FC1AB2CCFB0034BB22 /* SCChartCell.h */,
 				250383FD1AB2CCFB0034BB22 /* SCChartCell.m */,
+				250383FA1AB2CCFB0034BB22 /* SCBarCell.h */,
+				250383FB1AB2CCFB0034BB22 /* SCBarCell.m */,
+				25FA1F401AC161BF00F4C43F /* SCCircleCell.h */,
+				25FA1F411AC161BF00F4C43F /* SCCircleCell.m */,
+				25FA1F531AC170B200F4C43F /* SCPieCell.h */,
+				25FA1F541AC170B200F4C43F /* SCPieCell.m */,
 				250383B21AB2C9D80034BB22 /* Images.xcassets */,
 				250383B41AB2C9D80034BB22 /* LaunchScreen.xib */,
 				250383A51AB2C9D80034BB22 /* Supporting Files */,
@@ -165,6 +191,17 @@
 				250383F01AB2CAA50034BB22 /* SCLineChart.m */,
 				250383F11AB2CAA50034BB22 /* SCTool.h */,
 				250383F21AB2CAA50034BB22 /* SCTool.m */,
+				25FA1F3A1AC15F4300F4C43F /* SCCircleChart.h */,
+				25FA1F3B1AC15F4300F4C43F /* SCCircleChart.m */,
+				25FA1F3D1AC15F4B00F4C43F /* UICountingLabel.h */,
+				25FA1F3E1AC15F4B00F4C43F /* UICountingLabel.m */,
+				25FA1F4D1AC1708800F4C43F /* PNPieChart.h */,
+				25FA1F4E1AC1708800F4C43F /* PNPieChart.m */,
+				25FA1F4F1AC1708800F4C43F /* PNPieChartDataItem.h */,
+				25FA1F501AC1708800F4C43F /* PNPieChartDataItem.m */,
+				25FA1F561AC1718200F4C43F /* PNGenericChart.h */,
+				25FA1F571AC1718200F4C43F /* PNGenericChart.m */,
+				25FA1F591AC1718E00F4C43F /* PNChartDelegate.h */,
 			);
 			path = SCChart;
 			sourceTree = "<group>";
@@ -272,14 +309,21 @@
 				250383F61AB2CAA50034BB22 /* SCChartLabel.m in Sources */,
 				250383FF1AB2CCFB0034BB22 /* SCChartCell.m in Sources */,
 				250383F91AB2CAA50034BB22 /* SCTool.m in Sources */,
+				25FA1F3F1AC15F4B00F4C43F /* UICountingLabel.m in Sources */,
+				25FA1F421AC161BF00F4C43F /* SCCircleCell.m in Sources */,
+				25FA1F511AC1708800F4C43F /* PNPieChart.m in Sources */,
+				25FA1F521AC1708800F4C43F /* PNPieChartDataItem.m in Sources */,
 				250383FE1AB2CCFB0034BB22 /* SCBarCell.m in Sources */,
 				250383F71AB2CAA50034BB22 /* SCColor.m in Sources */,
 				250383AB1AB2C9D80034BB22 /* AppDelegate.m in Sources */,
 				250383F41AB2CAA50034BB22 /* SCBarChart.m in Sources */,
 				250383F31AB2CAA50034BB22 /* SCBar.m in Sources */,
 				250383F81AB2CAA50034BB22 /* SCLineChart.m in Sources */,
+				25FA1F3C1AC15F4300F4C43F /* SCCircleChart.m in Sources */,
 				250383CD1AB2CA300034BB22 /* SCViewController.m in Sources */,
 				250383F51AB2CAA50034BB22 /* SCChart.m in Sources */,
+				25FA1F551AC170B200F4C43F /* SCPieCell.m in Sources */,
+				25FA1F581AC1718200F4C43F /* PNGenericChart.m in Sources */,
 				250383A81AB2C9D80034BB22 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +509,7 @@
 				250383C71AB2C9D80034BB22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		250383C81AB2C9D80034BB22 /* Build configuration list for PBXNativeTarget "SCChartTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +518,7 @@
 				250383CA1AB2C9D80034BB22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

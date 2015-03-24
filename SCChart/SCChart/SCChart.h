@@ -11,6 +11,8 @@
 #import "SCColor.h"
 #import "SCLineChart.h"
 #import "SCBarChart.h"
+#import "SCCircleChart.h"
+#import "PNPieChart.h"
 //类型
 typedef enum {
 	SCChartLineStyle,

@@ -277,4 +277,27 @@
     [self addSubview:view];
 }
 
++ (CGSize)sizeOfString:(NSString *)text withWidth:(float)width font:(UIFont *)font
+{
+    NSInteger ch;
+    CGSize size = CGSizeMake(width, MAXFLOAT);
+    
+    if ([text respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
+        NSDictionary *tdic = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, nil];
+        size = [text boundingRectWithSize:size
+                                  options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                               attributes:tdic
+                                  context:nil].size;
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        size = [text sizeWithFont:font constrainedToSize:size lineBreakMode:NSLineBreakByCharWrapping];
+#pragma clang diagnostic pop
+    }
+    ch = size.height;
+    
+    return size;
+}
+
+
 @end

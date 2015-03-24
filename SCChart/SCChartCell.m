@@ -69,12 +69,6 @@
             return @[ary,ary2,ary3];
             break;
         }
-        case 3:
-        {
-            NSArray *ary = @[@"2",@"14",@"12",@"44",@"4",@"13",@"21"];
-            return @[ary];
-            break;
-        }
         default:
             break;
     }

@@ -61,19 +61,6 @@
             return @[ary,ary2];
             break;
         }
-        case 2:
-        {
-            NSArray *ary = @[@"0.2",@"0.14",@"0.12",@"0.44",@"0.4",@"0.13",@"0.21"];
-            return @[ary];
-            break;
-        }
-        case 3:
-        {
-            NSArray *ary = @[@"22",@"44",@"15",@"22",@"44",@"15",@"22"];
-            NSArray *ary2 = @[@"52",@"13",@"43",@"12",@"4",@"65",@"12"];
-            return @[ary,ary2];
-            break;
-        }
         default:
             break;
     }
