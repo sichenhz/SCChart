@@ -1,27 +1,66 @@
 ### 如何使用-SCChart
 
-![icon](http://img03.taobaocdn.com/imgextra/i3/135480037/TB2FaqKcXXXXXXnXpXXXXXXXXXX_!!135480037.gif)
+![icon](http://img03.taobaocdn.com/imgextra/i3/135480037/TB2J558cXXXXXXuXXXXXXXXXXXX_!!135480037.gif)
 
-1.实例化
-
-    -(id)initwithUUChartDataFrame:(CGRect)rect withSource:(id<UUChartDataSource>)dataSource withStyle:(UUChartStyle)style;
-
-2.选择图表的风格
-
-    UUChartLineStyle
-    UUChartBarStyle
+####导入主头文件
+    #import "SCChart.h"
     
-3.数据源方法(required)横坐标和竖坐标的title
+##### 一.折线图和柱状图
+1.实例化 ( SCChartLineStyle | SCChartBarStyle ) 
 
-    - (NSArray *)UUChart_xLableArray:(UUChart *)chart;
-    - (NSArray *)UUChart_yValueArray:(UUChart *)chart;
+    SCChart *chartView = [[SCChart alloc] initwithSCChartDataFrame:CGRectMake(10, 10, [UIScreen mainScreen].bounds.size.width - 20, 150) withSource:self withStyle:SCChartLineStyle];
+
+2.设置横坐标标题
+
+    - (NSArray *)SCChart_xLableArray:(SCChart *)chart {
+	    return 横坐标数组;
+    }
     
-4.数据源方法(optional)折现和圆柱的颜色
+3.设置数值(多重数组, 纵坐标标题动态计算)
 
-    - (NSArray *)UUChart_ColorArray:(UUChart *)chart;
+    - (NSArray *)SCChart_yValueArray:(SCChart *)chart {
+	    return @[数组1,数组2];
+    }
+    
+4.设置折现颜色
 
-5.数据源方法(optional)是否显示间隔线条
+    - (NSArray *)SCChart_ColorArray:(SCChart *)chart {
+	    return @[SCBlue,SCRed,SCGreen];
+    }
+
+5.是否显示间隔线条(折线图专用)
 
     - (BOOL)SCChart:(SCChart *)chart ShowHorizonLineAtIndex:(NSInteger)index {
-    return YES;
+	    return YES;
     }
+##### 二.圆环图
+1.实例化
+
+    SCCircleChart *chartView = [[SCCircleChart alloc] initWithFrame:CGRectMake(0, (self.frame.size.height-100)/2, SCREEN_WIDTH, 100.0) total:@100 current:@60 clockwise:YES];
+
+2.设置圆环颜色
+
+    [chartView setStrokeColor:SCBlue];
+    
+3.画线
+
+    [chartView strokeChart];
+    
+##### 三.圆饼图
+1.设置数值并实例化
+    
+    NSArray *items = @[[SCPieChartDataItem dataItemWithValue:10 color:SCRed description:@"A"],
+                       [SCPieChartDataItem dataItemWithValue:20 color:SCBlue description:@"B"],
+                       [SCPieChartDataItem dataItemWithValue:40 color:SCGreen description:@"C"],
+                       ];
+
+    SCPieChart *chartView = [[SCPieChart alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-150)/2, (self.frame.size.height-150)/2, 150.0, 150.0) items:items];
+
+2.设置描述文字
+
+    chartView.descriptionTextColor = [UIColor whiteColor];
+    chartView.descriptionTextFont  = [UIFont fontWithName:@"Avenir-Medium" size:12.0];
+    
+3.画线
+
+    [chartView strokeChart];
