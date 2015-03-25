@@ -22,7 +22,7 @@
                         shadow:NO
                    shadowColor:[UIColor clearColor]
           displayCountingLabel:YES
-             overrideLineWidth:@8.0f];
+             overrideLineWidth:@3.0f];
     
 }
 
@@ -35,7 +35,7 @@
                         shadow:shadow
                    shadowColor:backgroundShadowColor
           displayCountingLabel:YES
-             overrideLineWidth:@8.0f];
+             overrideLineWidth:@3.0f];
     
 }
 
@@ -48,7 +48,7 @@
                         shadow:shadow
                    shadowColor:SCGreen
           displayCountingLabel:displayCountingLabel
-             overrideLineWidth:@8.0f];
+             overrideLineWidth:@3.0f];
     
 }
 
@@ -68,7 +68,7 @@ displayCountingLabel:(BOOL)displayCountingLabel
         _current = current;
         _strokeColor = SCFreshGreen;
         _duration = 1.0;
-        _chartType = PNChartFormatTypePercent;
+        _chartType = SCChartFormatTypePercent;
         
         _displayCountingLabel = displayCountingLabel;
 
@@ -104,10 +104,11 @@ displayCountingLabel:(BOOL)displayCountingLabel
 
         _countingLabel = [[UICountingLabel alloc] initWithFrame:CGRectMake(0, 0, 100.0, 50.0)];
         [_countingLabel setTextAlignment:NSTextAlignmentCenter];
-        [_countingLabel setFont:[UIFont boldSystemFontOfSize:16.0f]];
+        [_countingLabel setFont:[UIFont boldSystemFontOfSize:12.0f]];
         [_countingLabel setTextColor:[UIColor grayColor]];
         [_countingLabel setBackgroundColor:[UIColor clearColor]];
         [_countingLabel setCenter:CGPointMake(self.frame.size.width/2.0f, self.frame.size.height/2.0f)];
+        _countingLabel.numberOfLines = 0;
         _countingLabel.method = UILabelCountingMethodEaseInOut;
         if (_displayCountingLabel) {
             [self addSubview:_countingLabel];
@@ -123,20 +124,19 @@ displayCountingLabel:(BOOL)displayCountingLabel
     // Add counting label
 
     if (_displayCountingLabel) {
-        NSString *format;
         switch (self.chartType) {
-            case PNChartFormatTypePercent:
-                format = @"%d%%";
+            case SCChartFormatTypePercent:
+                self.format = @"%d%%";
                 break;
-            case PNChartFormatTypeDollar:
-                format = @"$%d";
+            case SCChartFormatTypeDollar:
+                self.format = @"$%d";
                 break;
-            case PNChartFormatTypeNone:
+            case SCChartFormatTypeNone:
             default:
-                format = @"%d";
+                self.format = self.format ? self.format : @"%d";
                 break;
         }
-        self.countingLabel.format = format;
+        self.countingLabel.format = self.format;
         [self addSubview:self.countingLabel];
     }
 

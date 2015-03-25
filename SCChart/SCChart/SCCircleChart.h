@@ -10,10 +10,10 @@
 #import "SCColor.h"
 #import "UICountingLabel.h"
 
-typedef NS_ENUM (NSUInteger, PNChartFormatType) {
-    PNChartFormatTypePercent,
-    PNChartFormatTypeDollar,
-    PNChartFormatTypeNone
+typedef NS_ENUM (NSUInteger, SCChartFormatType) {
+    SCChartFormatTypePercent,
+    SCChartFormatTypeDollar,
+    SCChartFormatTypeNone
 };
 
 #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
@@ -60,7 +60,8 @@ displayCountingLabel:(BOOL)displayCountingLabel
 @property (nonatomic) NSNumber *current;
 @property (nonatomic) NSNumber *lineWidth;
 @property (nonatomic) NSTimeInterval duration;
-@property (nonatomic) PNChartFormatType chartType;
+@property (nonatomic) SCChartFormatType chartType;
+@property (nonatomic, copy) NSString *format;
 
 
 @property (nonatomic) CAShapeLayer *circle;

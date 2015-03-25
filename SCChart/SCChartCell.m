@@ -78,7 +78,7 @@
 #pragma mark - @optional
 //颜色数组
 - (NSArray *)SCChart_ColorArray:(SCChart *)chart {
-    return @[SCGreen,SCRed,SCBrown];
+    return @[SCBlue,SCRed,SCGreen];
 }
 
 #pragma mark 折线图专享功能

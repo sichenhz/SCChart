@@ -6,11 +6,11 @@
 //  Copyright (c) 2014年 kevinzhow. All rights reserved.
 //
 
-#import "PNPieChart.h"
+#import "SCPieChart.h"
 //needed for the expected label size
 #import "SCLineChart.h"
 
-@interface PNPieChart()
+@interface SCPieChart()
 
 @property (nonatomic) NSArray *items;
 @property (nonatomic) NSArray *endPercentages;
@@ -26,7 +26,7 @@
 - (void)loadDefault;
 
 - (UILabel *)descriptionLabelForItemAtIndex:(NSUInteger)index;
-- (PNPieChartDataItem *)dataItemForIndex:(NSUInteger)index;
+- (SCPieChartDataItem *)dataItemForIndex:(NSUInteger)index;
 - (CGFloat)startPercentageForItemAtIndex:(NSUInteger)index;
 - (CGFloat)endPercentageForItemAtIndex:(NSUInteger)index;
 - (CGFloat)ratioForItemAtIndex:(NSUInteger)index;
@@ -42,7 +42,7 @@
 @end
 
 
-@implementation PNPieChart
+@implementation SCPieChart
 
 -(id)initWithFrame:(CGRect)frame items:(NSArray *)items{
     self = [self initWithFrame:frame];
@@ -68,7 +68,7 @@
     __block CGFloat currentTotal = 0;
     CGFloat total = [[self.items valueForKeyPath:@"@sum.value"] floatValue];
     NSMutableArray *endPercentages = [NSMutableArray new];
-    [_items enumerateObjectsUsingBlock:^(PNPieChartDataItem *item, NSUInteger idx, BOOL *stop) {
+    [_items enumerateObjectsUsingBlock:^(SCPieChartDataItem *item, NSUInteger idx, BOOL *stop) {
         if (total == 0){
             [endPercentages addObject:@(1.0 / _items.count * (idx + 1))];
         }else{
@@ -92,7 +92,7 @@
 - (void)strokeChart{
     [self loadDefault];
     
-    PNPieChartDataItem *currentItem;
+    SCPieChartDataItem *currentItem;
     for (int i = 0; i < _items.count; i++) {
         currentItem = [self dataItemForIndex:i];
         
@@ -122,7 +122,7 @@
 }
 
 - (UILabel *)descriptionLabelForItemAtIndex:(NSUInteger)index{
-    PNPieChartDataItem *currentDataItem = [self dataItemForIndex:index];
+    SCPieChartDataItem *currentDataItem = [self dataItemForIndex:index];
     CGFloat distance = _innerCircleRadius + (_outerCircleRadius - _innerCircleRadius) / 2;
     CGFloat centerPercentage = ([self startPercentageForItemAtIndex:index] + [self endPercentageForItemAtIndex:index])/ 2;
     CGFloat rad = centerPercentage * 2 * M_PI;
@@ -162,7 +162,7 @@
     return descriptionLabel;
 }
 
-- (PNPieChartDataItem *)dataItemForIndex:(NSUInteger)index{
+- (SCPieChartDataItem *)dataItemForIndex:(NSUInteger)index{
     return self.items[index];
 }
 
@@ -280,7 +280,7 @@
     if (self.sectorHighlight) {
         [self.sectorHighlight removeFromSuperlayer];
     }
-    PNPieChartDataItem *currentItem = [self dataItemForIndex:index];
+    SCPieChartDataItem *currentItem = [self dataItemForIndex:index];
     
     CGFloat red,green,blue,alpha;
     UIColor *old = currentItem.color;
@@ -354,7 +354,7 @@
     NSUInteger rowWidth = 0;
     NSUInteger rowMaxHeight = 0;
     
-    for (PNPieChartDataItem *pdata in self.items) {
+    for (SCPieChartDataItem *pdata in self.items) {
         /* Expected label size*/
         CGSize labelsize = [SCLineChart sizeOfString:pdata.textDescription
                                            withWidth:maxLabelWidth

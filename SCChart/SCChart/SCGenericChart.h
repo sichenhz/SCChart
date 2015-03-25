@@ -20,7 +20,7 @@ typedef NS_ENUM(NSUInteger, PNLegendItemStyle) {
     PNLegendItemStyleSerial = 1
 };
 
-@interface PNGenericChart : UIView
+@interface SCGenericChart : UIView
 
 @property (assign, nonatomic) BOOL hasLegend;
 @property (assign, nonatomic) PNLegendPosition legendPosition;

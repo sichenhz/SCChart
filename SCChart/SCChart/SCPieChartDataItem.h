@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface PNPieChartDataItem : NSObject
+@interface SCPieChartDataItem : NSObject
 
 + (instancetype)dataItemWithValue:(CGFloat)value
                             color:(UIColor*)color;

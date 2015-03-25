@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PNPieChartDataItem.h"
-#import "PNGenericChart.h"
-#import "PNChartDelegate.h"
+#import "SCPieChartDataItem.h"
+#import "SCGenericChart.h"
+#import "SCChartDelegate.h"
 
-@interface PNPieChart : PNGenericChart
+@interface SCPieChart : SCGenericChart
 
 - (id)initWithFrame:(CGRect)frame items:(NSArray *)items;
 
@@ -38,7 +38,7 @@
 /** Show absolute values not relative i.e. percentages */
 @property (nonatomic) BOOL showAbsoluteValues;
 
-@property (nonatomic, weak) id<PNChartDelegate> delegate;
+@property (nonatomic, weak) id<SCChartDelegate> delegate;
 
 - (void)strokeChart;
 

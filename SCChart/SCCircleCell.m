@@ -26,8 +26,9 @@
                                                total:@100
                                              current:@60
                                            clockwise:YES];
-    chartView.backgroundColor = [UIColor clearColor];
-    [chartView setStrokeColor:SCGreen];
+    [chartView setStrokeColor:SCBlue];
+    chartView.chartType = SCChartFormatTypeNone;
+    chartView.format = @"无线端\n%d%%";
     [chartView strokeChart];
     [self addSubview:chartView];
 }

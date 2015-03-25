@@ -12,7 +12,7 @@
 #import "SCLineChart.h"
 #import "SCBarChart.h"
 #import "SCCircleChart.h"
-#import "PNPieChart.h"
+#import "SCPieChart.h"
 //类型
 typedef enum {
 	SCChartLineStyle,

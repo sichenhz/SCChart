@@ -6,15 +6,15 @@
 //  Copyright (c) 2015 kevinzhow. All rights reserved.
 //
 
-#import "PNGenericChart.h"
+#import "SCGenericChart.h"
 
-@interface PNGenericChart ()
+@interface SCGenericChart ()
 
 
 
 @end
 
-@implementation PNGenericChart
+@implementation SCGenericChart
 
 /*
 // Only override drawRect: if you perform custom drawing.
