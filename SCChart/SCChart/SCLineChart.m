@@ -56,8 +56,8 @@
         _yValueMax = _chooseRange.max;
         _yValueMin = _chooseRange.min;
     } else { // 自动计算数值范围和合适的行数
-        rowCount = [SCTool rowCountWithValueMax:_yValueMax];
-        _yValueMax = [SCTool rangeMaxWithValueMax:_yValueMax];
+        rowCount = [SCTool rowCountWithValueMax:_yValueMax] == 0 ? 5 : [SCTool rowCountWithValueMax:_yValueMax];
+        _yValueMax = [SCTool rangeMaxWithValueMax:_yValueMax] == 0 ? 100 : [SCTool rangeMaxWithValueMax:_yValueMax];
         _yValueMin = 0;
     }
     
