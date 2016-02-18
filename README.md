@@ -1,6 +1,6 @@
 ### 如何使用-SCChart
 
-![icon](http://img03.taobaocdn.com/imgextra/i3/135480037/TB2J558cXXXXXXuXXXXXXXXXXXX_!!135480037.gif)
+![icon](https://img.alicdn.com/imgextra/i2/135480037/TB2E0ubkpXXXXaCXXXXXXXXXXXX_!!135480037.gif)
 
 ####导入主头文件
     #import "SCChart.h"
