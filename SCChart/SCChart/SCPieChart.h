@@ -40,6 +40,8 @@
 
 @property (nonatomic, weak) id<SCChartDelegate> delegate;
 
+- (void)updateChartByNumbers:(NSArray *)numbers;
+
 - (void)strokeChart;
 
 @end

@@ -40,6 +40,10 @@
 
 -(void)setUpChart{
 	if (self.chartStyle == SCChartLineStyle) {
+        
+        [self.lineChart removeFromSuperview];
+        self.lineChart = nil;
+
         if(!_lineChart){
             _lineChart = [[SCLineChart alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
             [self addSubview:_lineChart];
@@ -92,6 +96,10 @@
 
 	}else if (self.chartStyle == SCChartBarStyle)
 	{
+        
+        [self.barChart removeFromSuperview];
+        self.barChart = nil;
+
         if (!_barChart) {
             _barChart = [[SCBarChart alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
             [self addSubview:_barChart];

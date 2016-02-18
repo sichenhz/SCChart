@@ -432,4 +432,16 @@
     [squareImageView setFrame:CGRectMake(originX, originY, size, size)];
     return squareImageView;
 }
+
+- (void)updateChartByNumbers:(NSArray *)numbers {
+    for (SCPieChartDataItem *item in self.items) {
+        NSInteger index = [self.items indexOfObject:item];
+        if (index >= numbers.count) {
+            break;
+        }
+        item.value = [numbers[index] integerValue];
+    }
+    [self strokeChart];
+}
+
 @end

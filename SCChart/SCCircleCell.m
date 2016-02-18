@@ -17,6 +17,24 @@
 
 @implementation SCCircleCell
 
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btn setTitle:@"点击刷新数据" forState:UIControlStateNormal];
+        btn.titleLabel.font = [UIFont systemFontOfSize:12.0];;
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        btn.frame = CGRectMake(0, 0, SCREEN_WIDTH, 27);
+        [btn addTarget:self action:@selector(btnPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:btn];
+    }
+    return self;
+}
+
+- (void)btnPressed:(id)sender {
+    CGFloat num = arc4random_uniform(60);
+    [chartView updateChartByCurrent:@(num)];
+}
+
 - (void)configUI:(NSIndexPath *)indexPath {
     if (chartView) {
         [chartView removeFromSuperview];
